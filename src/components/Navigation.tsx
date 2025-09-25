@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, MapPin, Heart, Calendar, User, Globe } from 'lucide-react';
+import { Menu, MapPin, Heart, Calendar, User } from 'lucide-react';
+import Logo from '@/components/Logo';
+import LanguageSelector from '@/components/LanguageSelector';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,17 +21,9 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-hero-gradient p-2 rounded-xl">
-              <Globe className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h1 className="font-poppins font-bold text-xl text-foreground">
-                Jharkhand<span className="text-primary">AI</span>
-              </h1>
-              <p className="text-xs text-muted-foreground font-inter">Discover Heritage</p>
-            </div>
-          </div>
+          <Link to="/" className="hover-lift transition-smooth">
+            <Logo size="md" />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -47,10 +41,11 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="font-inter">
+            <LanguageSelector variant="ghost" />
+            <Button variant="ghost" size="sm" className="font-inter hover-lift">
               Sign In
             </Button>
-            <Button className="bg-hero-gradient text-white font-inter font-medium shadow-soft hover-glow">
+            <Button className="bg-hero-gradient text-white font-inter font-medium shadow-soft hover-glow animate-pulse-glow">
               Get Started
             </Button>
           </div>

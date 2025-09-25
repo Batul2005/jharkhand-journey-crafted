@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles, MapPin, Users } from 'lucide-react';
 import heroImage from '@/assets/hero-jharkhand.jpg';
+import ThreeDBackground from '@/components/ThreeDBackground';
 
 const HeroSection = () => {
   return (
@@ -11,8 +12,11 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       
+      {/* 3D Background Layer */}
+      <ThreeDBackground className="z-0" intensity={0.7} />
+      
       {/* Overlay */}
-      <div className="absolute inset-0 bg-overlay-gradient" />
+      <div className="absolute inset-0 bg-overlay-gradient z-5" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
