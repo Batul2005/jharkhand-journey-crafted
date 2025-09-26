@@ -42,12 +42,16 @@ const Navigation = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSelector variant="ghost" />
-            <Button variant="ghost" size="sm" className="font-inter hover-lift">
-              Sign In
-            </Button>
-            <Button className="bg-hero-gradient text-white font-inter font-medium shadow-soft hover-glow animate-pulse-glow">
-              Get Started
-            </Button>
+            <Link to="/auth">
+              <Button variant="ghost" size="sm" className="font-inter hover-lift">
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/get-started">
+              <Button className="bg-hero-gradient text-white font-inter font-medium shadow-soft hover-glow animate-pulse-glow">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu */}
@@ -71,14 +75,18 @@ const Navigation = () => {
                        <span className="font-inter font-medium text-lg">{item.name}</span>
                      </Link>
                    ))}
-                  <div className="pt-6 border-t border-border space-y-3">
-                    <Button variant="outline" className="w-full font-inter">
-                      Sign In
-                    </Button>
-                    <Button className="w-full bg-hero-gradient text-white font-inter font-medium shadow-soft">
-                      Get Started
-                    </Button>
-                  </div>
+                   <div className="pt-6 border-t border-border space-y-3">
+                     <Link to="/auth">
+                       <Button variant="outline" className="w-full font-inter">
+                         Sign In
+                       </Button>
+                     </Link>
+                     <Link to="/get-started">
+                       <Button className="w-full bg-hero-gradient text-white font-inter font-medium shadow-soft">
+                         Get Started
+                       </Button>
+                     </Link>
+                   </div>
                 </div>
               </SheetContent>
             </Sheet>
