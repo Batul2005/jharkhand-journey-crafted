@@ -7,13 +7,17 @@
     "community": "समुदाय",
     "marketplace": "बाजार",
     "signIn": "साइन इन",
-    "getStarted": "शुरू करा"
+    "getStarted": "शुरू करा",
+    "aboutUs": "हमनी के बारे में",
+    "contact": "संपर्क करीं",
+    "faq": "सवाल-जवाब"
   },
   "hero": {
     "title": "झारखंड के जादू के खोजा",
     "subtitle": "असली आदिवासी संस्कृति, सुंदर नजारा आ भुलाइ ना जाए वाला रोमांच के दरवाजा",
     "exploreNow": "अभी खोजा",
-    "virtualTour": "वर्चुअल टूर"
+    "virtualTour": "वर्चुअल टूर",
+    "planTrip": "अपना यात्रा के योजना बनावा"
   },
   "auth": {
     "welcomeBack": "फिर से स्वागत बा",
@@ -33,14 +37,16 @@
     "administrator": "प्रशासक",
     "vendor": "दुकानदार",
     "signIn": "साइन इन",
-    "createAccount": "खाता बनावा",
+    "createAccountAlt": "खाता बनावा",
     "dontHaveAccount": "कउनो खाता नइखे?",
     "alreadyHaveAccount": "पहिले से खाता बा?",
     "signUp": "साइन अप",
     "backToHome": "← घर वापस",
     "enterEmail": "अपना ईमेल दिया",
     "enterPassword": "अपना पासवर्ड दिया",
-    "createSecurePassword": "एक सुरक्षित पासवर्ड बनावा"
+    "createSecurePassword": "एक सुरक्षित पासवर्ड बनावा",
+    "forgotPassword": "पासवर्ड भूला गइनी?",
+    "resetPassword": "पासवर्ड रीसेट करा"
   },
   "getStarted": {
     "title": "अपना यात्रा चुना",
@@ -65,12 +71,47 @@
   "attractions": {
     "featured": "खास आकर्षण",
     "viewAll": "सब देखा",
-    "exploreMore": "आ खोजा"
+    "exploreMore": "आ खोजा",
+    "popular": "लोकप्रिय जगह",
+    "hiddenGems": "छुपल खजाना",
+    "culturalSites": "संस्कृतिक जगह"
   },
   "search": {
     "searchDestinations": "गंतव्य खोजा...",
     "quickSearch": "जल्दी खोज",
-    "findYourNext": "अपना अगला रोमांच खोजा"
+    "findYourNext": "अपना अगला रोमांच खोजा",
+    "filters": "फिल्टर",
+    "sortBy": "अनुसार क्रमबद्ध करा",
+    "noResults": "कउनो परिणाम नइखे मिलल"
+  },
+  "community": {
+    "title": "समुदाय",
+    "joinDiscussion": "चर्चा में शामिल होखीं",
+    "shareExperience": "अपना अनुभव साझा करीं",
+    "connectPeople": "लोग से जुड़ल जा"
+  },
+  "marketplace": {
+    "title": "बाजार",
+    "browseProducts": "उत्पाद देखीं",
+    "buyNow": "अभी खरीदीं",
+    "sellWithUs": "हमरे साथ बेचा",
+    "localCrafts": "स्थानीय कला",
+    "foodSpecials": "खास भोजन"
+  },
+  "itinerary": {
+    "title": "यात्रा योजना",
+    "day": "दिन",
+    "activities": "गतिविधि",
+    "addPlan": "योजना जोड़ल जाव",
+    "recommendedTrips": "सुझावल यात्रा"
+  },
+  "footer": {
+    "about": "हमनी के बारे में",
+    "contact": "संपर्क करीं",
+    "privacyPolicy": "गोपनीयता नीति",
+    "termsOfService": "सेवा के शर्त",
+    "followUs": "हमनी के अनुसरण करीं",
+    "rights": "सभ अधिकार सुरक्षित बा"
   },
   "language": {
     "chooseLanguage": "भाषा चुना",
