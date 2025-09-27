@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Calendar, MapPin, Heart, Clock, Star, Plus, Filter, Download, Loader2 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState('bookings');
@@ -14,6 +15,7 @@ const UserDashboard = () => {
   const [wishlist, setWishlist] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
@@ -311,7 +313,10 @@ const UserDashboard = () => {
                       <Heart className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
                       <h3 className="text-xl font-semibold mb-2">No saved places yet</h3>
                       <p className="text-muted-foreground mb-4">Start exploring and save your favorite destinations!</p>
-                      <Button className="bg-hero-gradient">
+                      <Button 
+                        className="bg-hero-gradient"
+                        onClick={() => navigate('/explore')}
+                      >
                         Explore Destinations
                       </Button>
                     </CardContent>
