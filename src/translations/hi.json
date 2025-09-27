@@ -2,102 +2,119 @@
   "navigation": {
     "home": "होम",
     "explore": "खोजें",
-    "guides": "गाइड",
+    "guides": "गाइड्स",
     "itinerary": "यात्रा कार्यक्रम",
     "community": "समुदाय",
     "marketplace": "बाज़ार",
     "signIn": "साइन इन",
-    "getStarted": "शुरू करें"
+    "getStarted": "शुरू करें",
+    "aboutUs": "हमारे बारे में",
+    "contact": "संपर्क करें",
+    "faq": "सवाल-जवाब"
   },
   "hero": {
     "title": "झारखंड का जादू खोजें",
-    "subtitle": "प्रामाणिक आदिवासी संस्कृति, मनमोहक भूदृश्य और अविस्मरणीय रोमांच का आपका द्वार",
+    "subtitle": "असली आदिवासी संस्कृति, सुंदर नज़ारे और अविस्मरणीय रोमांच का द्वार",
     "exploreNow": "अभी खोजें",
-    "virtualTour": "वर्चुअल टूर"
+    "virtualTour": "वर्चुअल टूर",
+    "planTrip": "अपनी यात्रा की योजना बनाएं"
   },
   "auth": {
-    "welcomeBack": "वापस स्वागत है",
+    "welcomeBack": "फिर से स्वागत है",
     "joinUs": "हमसे जुड़ें",
     "signInToAccount": "अपने खाते में साइन इन करें",
-    "createAccount": "शुरू करने के लिए अपना खाता बनाएं",
+    "createAccount": "शुरू करने के लिए खाता बनाएं",
     "login": "लॉगिन",
     "register": "रजिस्टर",
     "email": "ईमेल",
     "password": "पासवर्ड",
     "firstName": "पहला नाम",
     "lastName": "अंतिम नाम",
-    "phoneNumber": "फोन नंबर",
+    "phoneNumber": "फ़ोन नंबर",
     "iAm": "मैं हूँ",
     "tourist": "पर्यटक",
     "localGuide": "स्थानीय गाइड",
     "administrator": "प्रशासक",
     "vendor": "विक्रेता",
     "signIn": "साइन इन",
-    "createAccount": "खाता बनाएं",
-    "dontHaveAccount": "कोई खाता नहीं है?",
+    "createAccountAlt": "खाता बनाएं",
+    "dontHaveAccount": "खाता नहीं है?",
     "alreadyHaveAccount": "पहले से खाता है?",
     "signUp": "साइन अप",
     "backToHome": "← होम पर वापस",
     "enterEmail": "अपना ईमेल दर्ज करें",
     "enterPassword": "अपना पासवर्ड दर्ज करें",
-    "createSecurePassword": "एक सुरक्षित पासवर्ड बनाएं"
+    "createSecurePassword": "सुरक्षित पासवर्ड बनाएं",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "resetPassword": "पासवर्ड रीसेट करें"
   },
   "getStarted": {
     "title": "अपनी यात्रा चुनें",
-    "subtitle": "व्यक्तिगत अनुभव पाने के लिए अपनी भूमिका चुनें",
+    "subtitle": "व्यक्तिगत अनुभव के लिए अपनी भूमिका चुनें",
     "tourist": {
       "title": "पर्यटक",
-      "description": "अद्भुत गंतव्यों की खोज करें और अपनी सही यात्रा की योजना बनाएं"
+      "description": "अद्भुत जगहों को खोजें और अपनी परफेक्ट यात्रा की योजना बनाएं"
     },
     "guide": {
       "title": "स्थानीय गाइड",
-      "description": "अपने स्थानीय ज्ञान को साझा करें और आगंतुकों का मार्गदर्शन करके कमाएं"
+      "description": "अपना स्थानीय ज्ञान साझा करें और आगंतुकों को गाइड करके कमाएं"
     },
     "admin": {
       "title": "प्रशासक",
-      "description": "प्लेटफॉर्म का प्रबंधन करें और संचालन की देखरेख करें"
+      "description": "प्लेटफ़ॉर्म का प्रबंधन करें और संचालन की देखरेख करें"
     },
     "vendor": {
       "title": "विक्रेता",
-      "description": "यात्रियों को अपने उत्पाद और सेवाएं बेचें"
+      "description": "यात्रियों को अपने उत्पाद और सेवाएँ बेचें"
     }
   },
   "attractions": {
     "featured": "विशेष आकर्षण",
     "viewAll": "सभी देखें",
-    "exploreMore": "और खोजें"
+    "exploreMore": "और खोजें",
+    "popular": "लोकप्रिय जगहें",
+    "hiddenGems": "छुपे हुए रत्न",
+    "culturalSites": "सांस्कृतिक स्थल"
   },
   "search": {
     "searchDestinations": "गंतव्य खोजें...",
     "quickSearch": "त्वरित खोज",
-    "findYourNext": "अपना अगला रोमांच खोजें"
+    "findYourNext": "अपना अगला रोमांच खोजें",
+    "filters": "फ़िल्टर",
+    "sortBy": "क्रमबद्ध करें",
+    "noResults": "कोई परिणाम नहीं मिला"
+  },
+  "community": {
+    "title": "समुदाय",
+    "joinDiscussion": "चर्चा में शामिल हों",
+    "shareExperience": "अपना अनुभव साझा करें",
+    "connectPeople": "लोगों से जुड़ें"
+  },
+  "marketplace": {
+    "title": "बाज़ार",
+    "browseProducts": "उत्पाद देखें",
+    "buyNow": "अभी खरीदें",
+    "sellWithUs": "हमारे साथ बेचें",
+    "localCrafts": "स्थानीय कला",
+    "foodSpecials": "खास भोजन"
+  },
+  "itinerary": {
+    "title": "यात्रा कार्यक्रम",
+    "day": "दिन",
+    "activities": "गतिविधियाँ",
+    "addPlan": "योजना जोड़ें",
+    "recommendedTrips": "सुझाई गई यात्राएँ"
   },
   "footer": {
-    "tagline": "स्थानीय अंतर्दृष्टि और प्रामाणिक अनुभवों के साथ झारखंड के छिपे हुए रत्नों की खोज करें।",
-    "quickLinks": "त्वरित लिंक",
-    "forTourists": "पर्यटकों के लिए",
-    "forGuides": "गाइडों के लिए",
-    "support": "सहायता",
-    "legal": "कानूनी",
-    "followUs": "हमें फॉलो करें",
-    "allRightsReserved": "सभी अधिकार सुरक्षित।",
-    "home": "होम",
-    "explore": "खोजें",
-    "guides": "गाइड",
-    "destinations": "गंतव्य",
-    "itinerary": "यात्रा कार्यक्रम बिल्डर",
-    "bookings": "बुकिंग",
-    "becomeGuide": "गाइड बनें",
-    "guideProfile": "गाइड प्रोफाइल",
-    "earnings": "कमाई",
-    "helpCenter": "सहायता केंद्र",
+    "about": "हमारे बारे में",
     "contact": "संपर्क करें",
-    "faq": "FAQ",
     "privacyPolicy": "गोपनीयता नीति",
-    "termsOfService": "सेवा की शर्तें"
+    "termsOfService": "सेवा की शर्तें",
+    "followUs": "हमें फॉलो करें",
+    "rights": "सभी अधिकार सुरक्षित"
   },
   "language": {
     "chooseLanguage": "भाषा चुनें",
-    "moreLanguagesComingSoon": "और भाषाएं जल्द आ रही हैं"
+    "moreLanguagesComingSoon": "और भाषाएँ जल्द आ रही हैं"
   }
 }
