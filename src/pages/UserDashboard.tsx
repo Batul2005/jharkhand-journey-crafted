@@ -1,92 +1,119 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Calendar, MapPin, Heart, Clock, Star, Plus, Filter, Download } from 'lucide-react';
+import { Calendar, MapPin, Heart, Clock, Star, Plus, Filter, Download, Loader2 } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
 
 const UserDashboard = () => {
   const [activeTab, setActiveTab] = useState('bookings');
+  const [user, setUser] = useState(null);
+  const [bookings, setBookings] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const user = {
-    name: "Priya Sharma",
-    email: "priya.sharma@email.com",
-    avatar: "/api/placeholder/64/64",
-    memberSince: "January 2023",
-    totalTrips: 12,
-    savedDestinations: 24
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
+  const fetchUserData = async () => {
+    try {
+      setLoading(true);
+      const userData = JSON.parse(localStorage.getItem('user'));
+      
+      if (!userData) {
+        setError('No user data found. Please login again.');
+        return;
+      }
+
+      setUser(userData);
+      
+      // Fetch bookings and wishlist
+      await Promise.all([
+        fetchBookings(userData.id),
+        fetchWishlist(userData.id)
+      ]);
+      
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      setError('Failed to load user data');
+      toast({
+        title: "Error",
+        description: "Failed to load user data. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const bookings = [
-    {
-      id: "BK001",
-      title: "Hundru Falls Adventure",
-      destination: "Ranchi, Jharkhand",
-      date: "2025-03-15",
-      status: "confirmed",
-      price: "₹2,500",
-      image: "/src/assets/hundru-falls.jpg",
-      guide: "Ravi Kumar"
-    },
-    {
-      id: "BK002", 
-      title: "Betla National Park Safari",
-      destination: "Latehar, Jharkhand",
-      date: "2025-03-20",
-      status: "pending",
-      price: "₹3,800",
-      image: "/src/assets/betla-park.jpg",
-      guide: "Sunita Devi"
-    },
-    {
-      id: "BK003",
-      title: "Cultural Heritage Tour",
-      destination: "Deoghar, Jharkhand", 
-      date: "2025-02-10",
-      status: "completed",
-      price: "₹1,800",
-      image: "/src/assets/handicrafts.jpg",
-      guide: "Amit Singh"
+  const fetchBookings = async (userId) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/user/${userId}/bookings`);
+      if (response.ok) {
+        const data = await response.json();
+        setBookings(data.bookings || []);
+      } else {
+        // If no bookings endpoint exists, use empty array
+        setBookings([]);
+      }
+    } catch (error) {
+      console.error('Failed to fetch bookings:', error);
+      setBookings([]);
     }
-  ];
+  };
 
-  const wishlist = [
-    {
-      id: 1,
-      title: "Netarhat Sunrise Point",
-      location: "Netarhat, Jharkhand",
-      rating: 4.7,
-      price: "₹1,200",
-      image: "/src/assets/hero-jharkhand.jpg"
-    },
-    {
-      id: 2,
-      title: "Jonha Falls",
-      location: "Ranchi, Jharkhand", 
-      rating: 4.5,
-      price: "₹800",
-      image: "/src/assets/hundru-falls.jpg"
+  const fetchWishlist = async (userId) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/user/${userId}/wishlist`);
+      if (response.ok) {
+        const data = await response.json();
+        setWishlist(data.wishlist || []);
+      } else {
+        // If no wishlist endpoint exists, use empty array
+        setWishlist([]);
+      }
+    } catch (error) {
+      console.error('Failed to fetch wishlist:', error);
+      setWishlist([]);
     }
-  ];
+  };
 
-  const travelHistory = [
-    {
-      year: "2025",
-      trips: [
-        { title: "Hundru Falls Adventure", date: "Mar 2025", rating: 5 },
-        { title: "Cultural Heritage Tour", date: "Feb 2025", rating: 4 }
-      ]
-    },
-    {
-      year: "2023", 
-      trips: [
-        { title: "Betla Wildlife Safari", date: "Dec 2023", rating: 5 },
-        { title: "Spiritual Deoghar Tour", date: "Nov 2023", rating: 4 },
-        { title: "Ranchi City Explorer", date: "Oct 2023", rating: 4 }
-      ]
-    }
-  ];
+  // Calculate dynamic stats from user data
+  const userStats = {
+    totalTrips: bookings.filter(b => b.status === 'completed').length,
+    savedDestinations: wishlist.length,
+    avgRating: bookings.length > 0 ? 
+      (bookings.reduce((sum, b) => sum + (b.rating || 0), 0) / bookings.length).toFixed(1) : 
+      "0.0"
+  };
+
+  // Generate travel history from bookings
+  const travelHistory = bookings
+    .filter(b => b.status === 'completed')
+    .reduce((acc, booking) => {
+      const year = new Date(booking.date).getFullYear().toString();
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+      acc[year].push({
+        title: booking.title,
+        date: new Date(booking.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }),
+        rating: booking.rating || 4
+      });
+      return acc;
+    }, {});
+
+  // Convert to array format
+  const travelHistoryArray = Object.entries(travelHistory).map(([year, trips]) => ({
+    year,
+    trips
+  }));
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -98,6 +125,33 @@ const UserDashboard = () => {
     }
   };
 
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4" />
+          <p className="text-muted-foreground">Loading your dashboard...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error || !user) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Unable to load dashboard</h2>
+          <p className="text-muted-foreground mb-4">{error || 'No user data found'}</p>
+          <Button onClick={() => window.location.href = '/auth'}>
+            Go to Login
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
@@ -105,12 +159,14 @@ const UserDashboard = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div className="flex items-center space-x-4">
             <Avatar className="h-16 w-16">
-              <AvatarImage src={user.avatar} alt={user.name} />
-              <AvatarFallback>PS</AvatarFallback>
+              <AvatarImage src={user.avatar} alt={`${user.firstName} ${user.lastName}`} />
+              <AvatarFallback>{user.firstName?.[0]}{user.lastName?.[0]}</AvatarFallback>
             </Avatar>
             <div>
-              <h1 className="text-3xl font-bold">Welcome back, {user.name}</h1>
-              <p className="text-muted-foreground">Member since {user.memberSince}</p>
+              <h1 className="text-3xl font-bold">Welcome back, {user.firstName} {user.lastName}</h1>
+              <p className="text-muted-foreground">
+                Member since {new Date(user.createdAt || Date.now()).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              </p>
             </div>
           </div>
           <Button className="bg-hero-gradient mt-4 md:mt-0">
@@ -124,21 +180,21 @@ const UserDashboard = () => {
           <Card>
             <CardContent className="p-6 text-center">
               <Calendar className="h-8 w-8 mx-auto mb-2 text-primary" />
-              <div className="text-2xl font-bold">{user.totalTrips}</div>
+              <div className="text-2xl font-bold">{userStats.totalTrips}</div>
               <div className="text-sm text-muted-foreground">Total Trips</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-6 text-center">
               <Heart className="h-8 w-8 mx-auto mb-2 text-red-500" />
-              <div className="text-2xl font-bold">{user.savedDestinations}</div>
+              <div className="text-2xl font-bold">{userStats.savedDestinations}</div>
               <div className="text-sm text-muted-foreground">Saved Places</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-6 text-center">
               <Star className="h-8 w-8 mx-auto mb-2 text-yellow-500" />
-              <div className="text-2xl font-bold">4.8</div>
+              <div className="text-2xl font-bold">{userStats.avgRating}</div>
               <div className="text-sm text-muted-foreground">Avg Rating Given</div>
             </CardContent>
           </Card>
@@ -169,7 +225,20 @@ const UserDashboard = () => {
             </div>
             
             <div className="space-y-4">
-              {bookings.map((booking) => (
+              {bookings.length === 0 ? (
+                <Card>
+                  <CardContent className="p-12 text-center">
+                    <Calendar className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
+                    <h3 className="text-xl font-semibold mb-2">No bookings yet</h3>
+                    <p className="text-muted-foreground mb-4">Start planning your Jharkhand adventure!</p>
+                    <Button className="bg-hero-gradient">
+                      <Plus className="h-4 w-4 mr-2" />
+                      Plan Your First Trip
+                    </Button>
+                  </CardContent>
+                </Card>
+              ) : (
+                bookings.map((booking) => (
                 <Card key={booking.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row gap-6">
@@ -220,7 +289,8 @@ const UserDashboard = () => {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+                ))
+              )}
             </div>
           </TabsContent>
 
@@ -234,7 +304,21 @@ const UserDashboard = () => {
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {wishlist.map((item) => (
+              {wishlist.length === 0 ? (
+                <div className="col-span-full">
+                  <Card>
+                    <CardContent className="p-12 text-center">
+                      <Heart className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
+                      <h3 className="text-xl font-semibold mb-2">No saved places yet</h3>
+                      <p className="text-muted-foreground mb-4">Start exploring and save your favorite destinations!</p>
+                      <Button className="bg-hero-gradient">
+                        Explore Destinations
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </div>
+              ) : (
+                wishlist.map((item) => (
                 <Card key={item.id} className="hover:shadow-md transition-shadow group">
                   <div className="relative">
                     <div className="w-full h-48 overflow-hidden rounded-t-lg">
@@ -273,7 +357,8 @@ const UserDashboard = () => {
                     </Button>
                   </CardContent>
                 </Card>
-              ))}
+                ))
+              )}
             </div>
           </TabsContent>
 
@@ -281,7 +366,20 @@ const UserDashboard = () => {
             <h2 className="text-2xl font-bold">Travel History</h2>
             
             <div className="space-y-6">
-              {travelHistory.map((yearData) => (
+              {travelHistoryArray.length === 0 ? (
+                <Card>
+                  <CardContent className="p-12 text-center">
+                    <Calendar className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
+                    <h3 className="text-xl font-semibold mb-2">No travel history yet</h3>
+                    <p className="text-muted-foreground mb-4">Complete your first trip to see your travel history!</p>
+                    <Button className="bg-hero-gradient">
+                      <Plus className="h-4 w-4 mr-2" />
+                      Plan Your First Trip
+                    </Button>
+                  </CardContent>
+                </Card>
+              ) : (
+                travelHistoryArray.map((yearData) => (
                 <Card key={yearData.year}>
                   <CardHeader>
                     <CardTitle>{yearData.year}</CardTitle>
@@ -310,7 +408,8 @@ const UserDashboard = () => {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+                ))
+              )}
             </div>
           </TabsContent>
 
@@ -322,22 +421,49 @@ const UserDashboard = () => {
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <Avatar className="h-20 w-20">
-                    <AvatarImage src={user.avatar} alt={user.name} />
-                    <AvatarFallback>PS</AvatarFallback>
+                    <AvatarImage src={user.avatar} alt={`${user.firstName} ${user.lastName}`} />
+                    <AvatarFallback>{user.firstName?.[0]}{user.lastName?.[0]}</AvatarFallback>
                   </Avatar>
                   <Button variant="outline">Change Photo</Button>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Full Name</label>
-                    <div className="p-2 border rounded">{user.name}</div>
+                    <label className="text-sm font-medium">First Name</label>
+                    <div className="p-2 border rounded">{user.firstName}</div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Last Name</label>
+                    <div className="p-2 border rounded">{user.lastName}</div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Email</label>
                     <div className="p-2 border rounded">{user.email}</div>
                   </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Phone</label>
+                    <div className="p-2 border rounded">{user.phone || 'Not provided'}</div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Language Preference</label>
+                    <div className="p-2 border rounded">{user.languagePreference || 'English'}</div>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Role</label>
+                    <div className="p-2 border rounded">{user.role}</div>
+                  </div>
                 </div>
+                
+                {user.preferences?.interests && user.preferences.interests.length > 0 && (
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Interests</label>
+                    <div className="flex flex-wrap gap-2">
+                      {user.preferences.interests.map((interest, index) => (
+                        <Badge key={index} variant="secondary">{interest}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 
                 <Button className="bg-hero-gradient">Update Profile</Button>
               </CardContent>
