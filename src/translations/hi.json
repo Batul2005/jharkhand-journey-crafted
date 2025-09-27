@@ -1,0 +1,103 @@
+{
+  "navigation": {
+    "home": "होम",
+    "explore": "खोजें",
+    "guides": "गाइड",
+    "itinerary": "यात्रा कार्यक्रम",
+    "community": "समुदाय",
+    "marketplace": "बाज़ार",
+    "signIn": "साइन इन",
+    "getStarted": "शुरू करें"
+  },
+  "hero": {
+    "title": "झारखंड का जादू खोजें",
+    "subtitle": "प्रामाणिक आदिवासी संस्कृति, मनमोहक भूदृश्य और अविस्मरणीय रोमांच का आपका द्वार",
+    "exploreNow": "अभी खोजें",
+    "virtualTour": "वर्चुअल टूर"
+  },
+  "auth": {
+    "welcomeBack": "वापस स्वागत है",
+    "joinUs": "हमसे जुड़ें",
+    "signInToAccount": "अपने खाते में साइन इन करें",
+    "createAccount": "शुरू करने के लिए अपना खाता बनाएं",
+    "login": "लॉगिन",
+    "register": "रजिस्टर",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "firstName": "पहला नाम",
+    "lastName": "अंतिम नाम",
+    "phoneNumber": "फोन नंबर",
+    "iAm": "मैं हूँ",
+    "tourist": "पर्यटक",
+    "localGuide": "स्थानीय गाइड",
+    "administrator": "प्रशासक",
+    "vendor": "विक्रेता",
+    "signIn": "साइन इन",
+    "createAccount": "खाता बनाएं",
+    "dontHaveAccount": "कोई खाता नहीं है?",
+    "alreadyHaveAccount": "पहले से खाता है?",
+    "signUp": "साइन अप",
+    "backToHome": "← होम पर वापस",
+    "enterEmail": "अपना ईमेल दर्ज करें",
+    "enterPassword": "अपना पासवर्ड दर्ज करें",
+    "createSecurePassword": "एक सुरक्षित पासवर्ड बनाएं"
+  },
+  "getStarted": {
+    "title": "अपनी यात्रा चुनें",
+    "subtitle": "व्यक्तिगत अनुभव पाने के लिए अपनी भूमिका चुनें",
+    "tourist": {
+      "title": "पर्यटक",
+      "description": "अद्भुत गंतव्यों की खोज करें और अपनी सही यात्रा की योजना बनाएं"
+    },
+    "guide": {
+      "title": "स्थानीय गाइड",
+      "description": "अपने स्थानीय ज्ञान को साझा करें और आगंतुकों का मार्गदर्शन करके कमाएं"
+    },
+    "admin": {
+      "title": "प्रशासक",
+      "description": "प्लेटफॉर्म का प्रबंधन करें और संचालन की देखरेख करें"
+    },
+    "vendor": {
+      "title": "विक्रेता",
+      "description": "यात्रियों को अपने उत्पाद और सेवाएं बेचें"
+    }
+  },
+  "attractions": {
+    "featured": "विशेष आकर्षण",
+    "viewAll": "सभी देखें",
+    "exploreMore": "और खोजें"
+  },
+  "search": {
+    "searchDestinations": "गंतव्य खोजें...",
+    "quickSearch": "त्वरित खोज",
+    "findYourNext": "अपना अगला रोमांच खोजें"
+  },
+  "footer": {
+    "tagline": "स्थानीय अंतर्दृष्टि और प्रामाणिक अनुभवों के साथ झारखंड के छिपे हुए रत्नों की खोज करें।",
+    "quickLinks": "त्वरित लिंक",
+    "forTourists": "पर्यटकों के लिए",
+    "forGuides": "गाइडों के लिए",
+    "support": "सहायता",
+    "legal": "कानूनी",
+    "followUs": "हमें फॉलो करें",
+    "allRightsReserved": "सभी अधिकार सुरक्षित।",
+    "home": "होम",
+    "explore": "खोजें",
+    "guides": "गाइड",
+    "destinations": "गंतव्य",
+    "itinerary": "यात्रा कार्यक्रम बिल्डर",
+    "bookings": "बुकिंग",
+    "becomeGuide": "गाइड बनें",
+    "guideProfile": "गाइड प्रोफाइल",
+    "earnings": "कमाई",
+    "helpCenter": "सहायता केंद्र",
+    "contact": "संपर्क करें",
+    "faq": "FAQ",
+    "privacyPolicy": "गोपनीयता नीति",
+    "termsOfService": "सेवा की शर्तें"
+  },
+  "language": {
+    "chooseLanguage": "भाषा चुनें",
+    "moreLanguagesComingSoon": "और भाषाएं जल्द आ रही हैं"
+  }
+}

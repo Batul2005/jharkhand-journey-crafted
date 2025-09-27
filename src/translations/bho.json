@@ -1,0 +1,79 @@
+{
+  "navigation": {
+    "home": "घर",
+    "explore": "खोजा",
+    "guides": "गाइड",
+    "itinerary": "यात्रा",
+    "community": "समुदाय",
+    "marketplace": "बाजार",
+    "signIn": "साइन इन",
+    "getStarted": "शुरू करा"
+  },
+  "hero": {
+    "title": "झारखंड के जादू के खोजा",
+    "subtitle": "असली आदिवासी संस्कृति, सुंदर नजारा आ भुलाइ ना जाए वाला रोमांच के दरवाजा",
+    "exploreNow": "अभी खोजा",
+    "virtualTour": "वर्चुअल टूर"
+  },
+  "auth": {
+    "welcomeBack": "फिर से स्वागत बा",
+    "joinUs": "हमसे जुड़ा",
+    "signInToAccount": "अपना खाता में साइन इन करा",
+    "createAccount": "शुरू करे खातिर अपना खाता बनावा",
+    "login": "लॉगिन",
+    "register": "रजिस्टर",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "firstName": "पहिला नाम",
+    "lastName": "अंतिम नाम",
+    "phoneNumber": "फोन नंबर",
+    "iAm": "हम बानी",
+    "tourist": "पर्यटक",
+    "localGuide": "स्थानीय गाइड",
+    "administrator": "प्रशासक",
+    "vendor": "दुकानदार",
+    "signIn": "साइन इन",
+    "createAccount": "खाता बनावा",
+    "dontHaveAccount": "कउनो खाता नइखे?",
+    "alreadyHaveAccount": "पहिले से खाता बा?",
+    "signUp": "साइन अप",
+    "backToHome": "← घर वापस",
+    "enterEmail": "अपना ईमेल दिया",
+    "enterPassword": "अपना पासवर्ड दिया",
+    "createSecurePassword": "एक सुरक्षित पासवर्ड बनावा"
+  },
+  "getStarted": {
+    "title": "अपना यात्रा चुना",
+    "subtitle": "निजी अनुभव पावे खातिर अपना भूमिका चुना",
+    "tourist": {
+      "title": "पर्यटक",
+      "description": "अद्भुत जगह के खोजा आ अपना सही यात्रा के योजना बनावा"
+    },
+    "guide": {
+      "title": "स्थानीय गाइड",
+      "description": "अपना स्थानीय ज्ञान साझा करा आ आगंतुक सब के गाइड करके कमावा"
+    },
+    "admin": {
+      "title": "प्रशासक",
+      "description": "प्लेटफॉर्म के प्रबंधन करा आ संचालन के देखरेख करा"
+    },
+    "vendor": {
+      "title": "दुकानदार",
+      "description": "यात्री सब के अपना सामान आ सेवा बेचा"
+    }
+  },
+  "attractions": {
+    "featured": "खास आकर्षण",
+    "viewAll": "सब देखा",
+    "exploreMore": "आ खोजा"
+  },
+  "search": {
+    "searchDestinations": "गंतव्य खोजा...",
+    "quickSearch": "जल्दी खोज",
+    "findYourNext": "अपना अगला रोमांच खोजा"
+  },
+  "language": {
+    "chooseLanguage": "भाषा चुना",
+    "moreLanguagesComingSoon": "आ भाषा सब जल्दी आवत बा"
+  }
+}

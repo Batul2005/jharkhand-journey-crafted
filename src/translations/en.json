@@ -1,0 +1,103 @@
+{
+  "navigation": {
+    "home": "Home",
+    "explore": "Explore",
+    "guides": "Guides",
+    "itinerary": "Itinerary",
+    "community": "Community",
+    "marketplace": "Marketplace",
+    "signIn": "Sign In",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Discover the Magic of Jharkhand",
+    "subtitle": "Your gateway to authentic tribal culture, breathtaking landscapes, and unforgettable adventures",
+    "exploreNow": "Explore Now",
+    "virtualTour": "Virtual Tour"
+  },
+  "auth": {
+    "welcomeBack": "Welcome Back",
+    "joinUs": "Join Us",
+    "signInToAccount": "Sign in to your account",
+    "createAccount": "Create your account to get started",
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number",
+    "iAm": "I am a",
+    "tourist": "Tourist",
+    "localGuide": "Local Guide",
+    "administrator": "Administrator",
+    "vendor": "Vendor",
+    "signIn": "Sign In",
+    "createAccount": "Create Account",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "signUp": "Sign up",
+    "backToHome": "← Back to Home",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "createSecurePassword": "Create a secure password"
+  },
+  "getStarted": {
+    "title": "Choose Your Journey",
+    "subtitle": "Select your role to get personalized experiences",
+    "tourist": {
+      "title": "Tourist",
+      "description": "Discover amazing destinations and plan your perfect trip"
+    },
+    "guide": {
+      "title": "Local Guide",
+      "description": "Share your local knowledge and earn by guiding visitors"
+    },
+    "admin": {
+      "title": "Administrator",
+      "description": "Manage the platform and oversee operations"
+    },
+    "vendor": {
+      "title": "Vendor",
+      "description": "Sell your products and services to travelers"
+    }
+  },
+  "attractions": {
+    "featured": "Featured Attractions",
+    "viewAll": "View All",
+    "exploreMore": "Explore More"
+  },
+  "search": {
+    "searchDestinations": "Search destinations...",
+    "quickSearch": "Quick Search",
+    "findYourNext": "Find your next adventure"
+  },
+  "footer": {
+    "tagline": "Discover the hidden gems of Jharkhand with local insights and authentic experiences.",
+    "quickLinks": "Quick Links",
+    "forTourists": "For Tourists",
+    "forGuides": "For Guides",
+    "support": "Support",
+    "legal": "Legal",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All rights reserved.",
+    "home": "Home",
+    "explore": "Explore",
+    "guides": "Guides",
+    "destinations": "Destinations",
+    "itinerary": "Itinerary Builder",
+    "bookings": "Bookings",
+    "becomeGuide": "Become a Guide",
+    "guideProfile": "Guide Profile",
+    "earnings": "Earnings",
+    "helpCenter": "Help Center",
+    "contact": "Contact Us",
+    "faq": "FAQ",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "language": {
+    "chooseLanguage": "Choose Language",
+    "moreLanguagesComingSoon": "More languages coming soon"
+  }
+}

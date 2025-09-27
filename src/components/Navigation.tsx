@@ -5,15 +5,17 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, MapPin, Heart, Calendar, User } from 'lucide-react';
 import Logo from '@/components/Logo';
 import LanguageSelector from '@/components/LanguageSelector';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   const navItems = [
-    { name: 'Explore', href: '/explore', icon: MapPin },
-    { name: 'Plan Trip', href: '/itinerary', icon: Calendar },
-    { name: 'Marketplace', href: '/marketplace', icon: Heart },
-    { name: 'Guides', href: '/guides', icon: User },
+    { name: t('navigation.explore'), href: '/explore', icon: MapPin },
+    { name: t('navigation.itinerary'), href: '/itinerary', icon: Calendar },
+    { name: t('navigation.marketplace'), href: '/marketplace', icon: Heart },
+    { name: t('navigation.guides'), href: '/guides', icon: User },
   ];
 
   return (
@@ -44,12 +46,12 @@ const Navigation = () => {
             <LanguageSelector variant="ghost" />
             <Link to="/auth">
               <Button variant="ghost" size="sm" className="font-inter hover-lift">
-                Sign In
+                {t('navigation.signIn')}
               </Button>
             </Link>
             <Link to="/get-started">
               <Button className="bg-hero-gradient text-white font-inter font-medium shadow-soft hover-glow animate-pulse-glow">
-                Get Started
+                {t('navigation.getStarted')}
               </Button>
             </Link>
           </div>
@@ -76,16 +78,16 @@ const Navigation = () => {
                      </Link>
                    ))}
                    <div className="pt-6 border-t border-border space-y-3">
-                     <Link to="/auth">
-                       <Button variant="outline" className="w-full font-inter">
-                         Sign In
-                       </Button>
-                     </Link>
-                     <Link to="/get-started">
-                       <Button className="w-full bg-hero-gradient text-white font-inter font-medium shadow-soft">
-                         Get Started
-                       </Button>
-                     </Link>
+                      <Link to="/auth">
+                        <Button variant="outline" className="w-full font-inter">
+                          {t('navigation.signIn')}
+                        </Button>
+                      </Link>
+                      <Link to="/get-started">
+                        <Button className="w-full bg-hero-gradient text-white font-inter font-medium shadow-soft">
+                          {t('navigation.getStarted')}
+                        </Button>
+                      </Link>
                    </div>
                 </div>
               </SheetContent>

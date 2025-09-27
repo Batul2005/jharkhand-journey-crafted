@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Globe, ChevronDown, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -7,22 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-
-interface Language {
-  code: string;
-  name: string;
-  nativeName: string;
-  flag: string;
-}
-
-const languages: Language[] = [
-  { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
-  { code: 'hi', name: 'Hindi', nativeName: 'हिंदी', flag: '🇮🇳' },
-  { code: 'bho', name: 'Bhojpuri', nativeName: 'भोजपुरी', flag: '🏴󠁩󠁮󠁪󠁨󠁿' },
-  { code: 'sa', name: 'Santali', nativeName: 'ᱥᱟᱱᱛᱟᱲᱤ', flag: '🌿' },
-  { code: 'ho', name: 'Ho', nativeName: '𑢹𑣉𑣉', flag: '🏔️' },
-  { code: 'ku', name: 'Kurukh', nativeName: 'कुड़ुख़', flag: '🌲' },
-];
+import { useLanguage, languages } from '@/contexts/LanguageContext';
 
 interface LanguageSelectorProps {
   variant?: 'default' | 'ghost' | 'outline';
@@ -35,45 +20,38 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   size = 'default',
   className = ''
 }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
-
-  const handleLanguageChange = (language: Language) => {
-    setSelectedLanguage(language);
-    // In a real app, this would trigger language change logic
-    // For now, we'll just update the UI
-    console.log('Language changed to:', language.code);
-  };
+  const { currentLanguage, setLanguage, t } = useLanguage();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant={variant} 
-          size={size}
-          className={`flex items-center space-x-2 ${className} hover-scale transition-smooth`}
-        >
-          <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline text-sm font-inter">
-            {selectedLanguage.flag} {selectedLanguage.nativeName}
-          </span>
-          <span className="sm:hidden text-lg">
-            {selectedLanguage.flag}
-          </span>
-          <ChevronDown className="h-3 w-3 opacity-50" />
-        </Button>
+          <Button 
+            variant={variant} 
+            size={size}
+            className={`flex items-center space-x-2 ${className} hover-scale transition-smooth`}
+          >
+            <Globe className="h-4 w-4" />
+            <span className="hidden sm:inline text-sm font-inter">
+              {currentLanguage.flag} {currentLanguage.nativeName}
+            </span>
+            <span className="sm:hidden text-lg">
+              {currentLanguage.flag}
+            </span>
+            <ChevronDown className="h-3 w-3 opacity-50" />
+          </Button>
       </DropdownMenuTrigger>
       
       <DropdownMenuContent align="end" className="w-56 animate-fade-in">
         <div className="px-2 py-1.5">
           <div className="text-xs font-poppins font-semibold text-muted-foreground uppercase tracking-wider">
-            Choose Language
+            {t('language.chooseLanguage')}
           </div>
         </div>
         
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
-            onClick={() => handleLanguageChange(language)}
+            onClick={() => setLanguage(language)}
             className="flex items-center justify-between p-2 cursor-pointer hover:bg-muted/50 transition-smooth"
           >
             <div className="flex items-center space-x-3">
@@ -88,7 +66,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
               </div>
             </div>
             
-            {selectedLanguage.code === language.code && (
+            {currentLanguage.code === language.code && (
               <Check className="h-4 w-4 text-primary" />
             )}
           </DropdownMenuItem>
@@ -96,7 +74,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         
         <div className="px-2 py-1.5 border-t">
           <div className="text-xs text-muted-foreground text-center">
-            More languages coming soon
+            {t('language.moreLanguagesComingSoon')}
           </div>
         </div>
       </DropdownMenuContent>

@@ -6,17 +6,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { User, MapPin, Shield, Calendar } from 'lucide-react';
+import { User, MapPin, Shield, Store } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [userType, setUserType] = useState<'tourist' | 'guide' | 'admin' | 'vendor'>('tourist');
+  const { t } = useTranslation();
 
   const roleIcons = {
     tourist: User,
     guide: MapPin,
     admin: Shield,
-    vendor: Calendar
+    vendor: Store
   };
 
   const roleColors = {
@@ -31,34 +33,34 @@ const Auth = () => {
       <Card className="w-full max-w-md glass backdrop-blur-md border-white/20">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            {isLogin ? 'Welcome Back' : 'Join Us'}
+            {isLogin ? t('auth.welcomeBack') : t('auth.joinUs')}
           </CardTitle>
           <CardDescription>
-            {isLogin ? 'Sign in to your account' : 'Create your account to get started'}
+            {isLogin ? t('auth.signInToAccount') : t('auth.createAccount')}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs value={isLogin ? 'login' : 'register'} onValueChange={(v) => setIsLogin(v === 'login')}>
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="login">Login</TabsTrigger>
-              <TabsTrigger value="register">Register</TabsTrigger>
+              <TabsTrigger value="login">{t('auth.login')}</TabsTrigger>
+              <TabsTrigger value="register">{t('auth.register')}</TabsTrigger>
             </TabsList>
             
             <TabsContent value="login" className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="Enter your email" />
+                <Label htmlFor="email">{t('auth.email')}</Label>
+                <Input id="email" type="email" placeholder={t('auth.enterEmail')} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" type="password" placeholder="Enter your password" />
+                <Label htmlFor="password">{t('auth.password')}</Label>
+                <Input id="password" type="password" placeholder={t('auth.enterPassword')} />
               </div>
-              <Button className="w-full bg-hero-gradient">Sign In</Button>
+              <Button className="w-full bg-hero-gradient">{t('auth.signIn')}</Button>
             </TabsContent>
             
             <TabsContent value="register" className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="role">I am a</Label>
+                <Label htmlFor="role">{t('auth.iAm')}</Label>
                 <Select value={userType} onValueChange={(value: any) => setUserType(value)}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select your role" />
@@ -67,25 +69,25 @@ const Auth = () => {
                     <SelectItem value="tourist">
                       <div className="flex items-center space-x-2">
                         <User className="h-4 w-4" />
-                        <span>Tourist</span>
+                        <span>{t('auth.tourist')}</span>
                       </div>
                     </SelectItem>
                     <SelectItem value="guide">
                       <div className="flex items-center space-x-2">
                         <MapPin className="h-4 w-4" />
-                        <span>Local Guide</span>
+                        <span>{t('auth.localGuide')}</span>
                       </div>
                     </SelectItem>
                     <SelectItem value="admin">
                       <div className="flex items-center space-x-2">
                         <Shield className="h-4 w-4" />
-                        <span>Administrator</span>
+                        <span>{t('auth.administrator')}</span>
                       </div>
                     </SelectItem>
                     <SelectItem value="vendor">
                       <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4" />
-                        <span>Vendor</span>
+                        <Store className="h-4 w-4" />
+                        <span>{t('auth.vendor')}</span>
                       </div>
                     </SelectItem>
                   </SelectContent>
@@ -94,50 +96,50 @@ const Auth = () => {
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
+                  <Label htmlFor="firstName">{t('auth.firstName')}</Label>
                   <Input id="firstName" placeholder="John" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
+                  <Label htmlFor="lastName">{t('auth.lastName')}</Label>
                   <Input id="lastName" placeholder="Doe" />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="email-reg">Email</Label>
+                <Label htmlFor="email-reg">{t('auth.email')}</Label>
                 <Input id="email-reg" type="email" placeholder="john@example.com" />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="password-reg">Password</Label>
-                <Input id="password-reg" type="password" placeholder="Create a secure password" />
+                <Label htmlFor="password-reg">{t('auth.password')}</Label>
+                <Input id="password-reg" type="password" placeholder={t('auth.createSecurePassword')} />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
+                <Label htmlFor="phone">{t('auth.phoneNumber')}</Label>
                 <Input id="phone" type="tel" placeholder="+91 9876543210" />
               </div>
               
-              <Button className="w-full bg-hero-gradient">Create Account</Button>
+              <Button className="w-full bg-hero-gradient">{t('auth.createAccount')}</Button>
             </TabsContent>
           </Tabs>
           
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
-              {isLogin ? "Don't have an account?" : "Already have an account?"}
+              {isLogin ? t('auth.dontHaveAccount') : t('auth.alreadyHaveAccount')}
               <Button
                 variant="link"
                 className="p-0 ml-1 h-auto font-semibold text-primary"
                 onClick={() => setIsLogin(!isLogin)}
               >
-                {isLogin ? 'Sign up' : 'Sign in'}
+                {isLogin ? t('auth.signUp') : t('auth.signIn')}
               </Button>
             </p>
           </div>
           
           <div className="mt-4 text-center">
             <Link to="/" className="text-sm text-muted-foreground hover:text-primary">
-              ← Back to Home
+              {t('auth.backToHome')}
             </Link>
           </div>
         </CardContent>
