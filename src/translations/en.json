@@ -7,19 +7,23 @@
     "community": "Community",
     "marketplace": "Marketplace",
     "signIn": "Sign In",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "faq": "FAQ"
   },
   "hero": {
     "title": "Discover the Magic of Jharkhand",
-    "subtitle": "Your gateway to authentic tribal culture, breathtaking landscapes, and unforgettable adventures",
+    "subtitle": "Gateway to authentic tribal culture, stunning landscapes, and unforgettable adventures",
     "exploreNow": "Explore Now",
-    "virtualTour": "Virtual Tour"
+    "virtualTour": "Virtual Tour",
+    "planTrip": "Plan Your Trip"
   },
   "auth": {
     "welcomeBack": "Welcome Back",
     "joinUs": "Join Us",
     "signInToAccount": "Sign in to your account",
-    "createAccount": "Create your account to get started",
+    "createAccount": "Create an account to get started",
     "login": "Login",
     "register": "Register",
     "email": "Email",
@@ -33,21 +37,23 @@
     "administrator": "Administrator",
     "vendor": "Vendor",
     "signIn": "Sign In",
-    "createAccount": "Create Account",
+    "createAccountAlt": "Create Account",
     "dontHaveAccount": "Don't have an account?",
     "alreadyHaveAccount": "Already have an account?",
-    "signUp": "Sign up",
+    "signUp": "Sign Up",
     "backToHome": "← Back to Home",
     "enterEmail": "Enter your email",
     "enterPassword": "Enter your password",
-    "createSecurePassword": "Create a secure password"
+    "createSecurePassword": "Create a secure password",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password"
   },
   "getStarted": {
     "title": "Choose Your Journey",
-    "subtitle": "Select your role to get personalized experiences",
+    "subtitle": "Select your role to get a personalized experience",
     "tourist": {
       "title": "Tourist",
-      "description": "Discover amazing destinations and plan your perfect trip"
+      "description": "Explore amazing destinations and plan your perfect trip"
     },
     "guide": {
       "title": "Local Guide",
@@ -65,36 +71,47 @@
   "attractions": {
     "featured": "Featured Attractions",
     "viewAll": "View All",
-    "exploreMore": "Explore More"
+    "exploreMore": "Explore More",
+    "popular": "Popular Places",
+    "hiddenGems": "Hidden Gems",
+    "culturalSites": "Cultural Sites"
   },
   "search": {
     "searchDestinations": "Search destinations...",
     "quickSearch": "Quick Search",
-    "findYourNext": "Find your next adventure"
+    "findYourNext": "Find your next adventure",
+    "filters": "Filters",
+    "sortBy": "Sort By",
+    "noResults": "No results found"
+  },
+  "community": {
+    "title": "Community",
+    "joinDiscussion": "Join the discussion",
+    "shareExperience": "Share your experience",
+    "connectPeople": "Connect with people"
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "browseProducts": "Browse Products",
+    "buyNow": "Buy Now",
+    "sellWithUs": "Sell with Us",
+    "localCrafts": "Local Crafts",
+    "foodSpecials": "Food Specials"
+  },
+  "itinerary": {
+    "title": "Itinerary",
+    "day": "Day",
+    "activities": "Activities",
+    "addPlan": "Add Plan",
+    "recommendedTrips": "Recommended Trips"
   },
   "footer": {
-    "tagline": "Discover the hidden gems of Jharkhand with local insights and authentic experiences.",
-    "quickLinks": "Quick Links",
-    "forTourists": "For Tourists",
-    "forGuides": "For Guides",
-    "support": "Support",
-    "legal": "Legal",
-    "followUs": "Follow Us",
-    "allRightsReserved": "All rights reserved.",
-    "home": "Home",
-    "explore": "Explore",
-    "guides": "Guides",
-    "destinations": "Destinations",
-    "itinerary": "Itinerary Builder",
-    "bookings": "Bookings",
-    "becomeGuide": "Become a Guide",
-    "guideProfile": "Guide Profile",
-    "earnings": "Earnings",
-    "helpCenter": "Help Center",
-    "contact": "Contact Us",
-    "faq": "FAQ",
+    "about": "About Us",
+    "contact": "Contact",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved"
   },
   "language": {
     "chooseLanguage": "Choose Language",
