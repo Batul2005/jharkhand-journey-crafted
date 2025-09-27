@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, MapPin, Shield, Star, Globe, Calendar } from 'lucide-react';
+import { User, MapPin, Shield, Star, Globe, Calendar, Store } from 'lucide-react';
 
 const GetStarted = () => {
   const userTypes = [
@@ -31,6 +31,15 @@ const GetStarted = () => {
       features: ['User management', 'Content control', 'Analytics dashboard', 'Financial oversight'],
       color: 'from-red-500 to-red-600',
       path: '/auth?type=admin'
+    },
+    {
+      type: 'vendor',
+      title: 'I\'m a Vendor',
+      description: 'Sell your products and services to tourists',
+      icon: Store,
+      features: ['List products & services', 'Manage inventory', 'Process orders', 'Track sales'],
+      color: 'from-purple-500 to-purple-600',
+      path: '/auth?type=vendor'
     }
   ];
 
@@ -66,7 +75,7 @@ const GetStarted = () => {
         </div>
         
         {/* User Type Selection */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {userTypes.map((userType) => {
             const Icon = userType.icon;
             return (

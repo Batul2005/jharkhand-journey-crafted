@@ -85,7 +85,7 @@ const Auth = () => {
                     <SelectItem value="vendor">
                       <div className="flex items-center space-x-2">
                         <Calendar className="h-4 w-4" />
-                        <span>Event Vendor</span>
+                        <span>Vendor</span>
                       </div>
                     </SelectItem>
                   </SelectContent>
