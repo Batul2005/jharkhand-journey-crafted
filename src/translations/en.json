@@ -17,7 +17,15 @@
     "subtitle": "Gateway to authentic tribal culture, stunning landscapes, and unforgettable adventures",
     "exploreNow": "Explore Now",
     "virtualTour": "Virtual Tour",
-    "planTrip": "Plan Your Trip"
+    "planTrip": "Plan Your Trip",
+    "discover": "Discover",
+    "hiddenTreasures": "Jharkhand's Hidden Treasures",
+    "experience": "Experience authentic tribal culture, pristine waterfalls, and untouched forests with AI-powered personalized itineraries and verified local guides.",
+    "planTripAI": "Plan My Trip with AI",
+    "exploreAttractions": "Explore Attractions",
+    "verifiedBy": "Verified by JTDC",
+    "aiRecommendations": "AI-Powered Recommendations",
+    "community": "Local Community Supported"
   },
   "auth": {
     "welcomeBack": "Welcome Back",
@@ -82,7 +90,16 @@
     "findYourNext": "Find your next adventure",
     "filters": "Filters",
     "sortBy": "Sort By",
-    "noResults": "No results found"
+    "noResults": "No results found",
+    "whereExplore": "Where do you want to explore in Jharkhand?",
+    "tripType": "Trip Type",
+    "chooseExperience": "Choose experience",
+    "duration": "Duration",
+    "howLong": "How long?",
+    "moreFilters": "More Filters",
+    "advancedOptions": "Advanced Options",
+    "generateAI": "Generate AI Itinerary",
+    "popularSearches": "Popular searches"
   },
   "community": {
     "title": "Community",
@@ -103,7 +120,47 @@
     "day": "Day",
     "activities": "Activities",
     "addPlan": "Add Plan",
-    "recommendedTrips": "Recommended Trips"
+    "recommendedTrips": "Recommended Trips",
+    "planPerfect": "Plan Your Perfect Journey",
+    "personalized": "Let our AI create a personalized itinerary just for you"
+  },
+  "featured": {
+    "title": "Featured Destinations",
+    "mustVisit": "Discover Jharkhand's Must-Visit Places",
+    "subtitle": "From cascading waterfalls to wildlife sanctuaries and authentic tribal experiences, explore the best that Jharkhand has to offer."
+  },
+  "destination": {
+    "verified": "✓ Verified",
+    "reviews": "reviews",
+    "viewDetails": "View Details",
+    "mapTitle": "Interactive Destination Map",
+    "mapInstruction": "Click on any destination to explore detailed information and plan your visit",
+    "legend": "Legend",
+    "planItinerary": "Plan Full Itinerary",
+    "downloadMap": "Download Map"
+  },
+  "legend": {
+    "waterfall": "Waterfall",
+    "temple": "Temple",
+    "park": "Park",
+    "cultural": "Cultural",
+    "adventure": "Adventure"
+  },
+  "virtualTours": {
+    "title": "Virtual Reality Tours",
+    "subtitle": "Experience Jharkhand's beauty from anywhere with immersive 360° virtual tours",
+    "startJourney": "Start Your Virtual Journey",
+    "selectTour": "Select a tour from the sidebar to begin",
+    "startFirst": "Start First Tour",
+    "request": "Want a custom virtual tour?",
+    "requestTour": "Request Tour"
+  },
+  "events": {
+    "title": "Events & Festivals",
+    "subtitle": "Experience authentic Jharkhand culture through festivals, workshops, and community events",
+    "calendar": "Calendar",
+    "listView": "List View",
+    "clickEvent": "Click on any event to view details"
   },
   "footer": {
     "about": "About Us",
@@ -111,7 +168,31 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "followUs": "Follow Us",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "brand": "JharkhandAI",
+    "tagline": "Discover Heritage",
+    "description": "Experience the authentic beauty of Jharkhand with AI-powered personalized itineraries, verified local guides, and sustainable tourism practices.",
+    "phone": "+91 1800-XXX-XXXX",
+    "email": "info@jharkhandai.gov.in",
+    "address": "Ranchi, Jharkhand, India",
+    "explore": "Explore",
+    "destinations": "Destinations",
+    "planner": "Itinerary Planner",
+    "guides": "Local Guides",
+    "villages": "Tribal Villages",
+    "wildlife": "Wildlife Sanctuaries",
+    "services": "Services",
+    "tripPlanning": "AI Trip Planning",
+    "verifiedGuides": "Verified Guides",
+    "homestays": "Homestays",
+    "marketplaceAlt": "Local Marketplace",
+    "cultural": "Cultural Experiences",
+    "support": "Support",
+    "help": "Help Center",
+    "safety": "Safety Guidelines",
+    "contactUs": "Contact Us",
+    "helpline": "Tourist Helpline",
+    "emergency": "Emergency Contacts"
   },
   "language": {
     "chooseLanguage": "Choose Language",
