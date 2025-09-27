@@ -36,7 +36,7 @@ const GuideDashboard = () => {
       customerName: "Sarah Johnson",
       customerAvatar: "SJ",
       tour: "Betla National Park Safari",
-      date: "2024-03-15",
+      date: "2025-03-15",
       guests: 4,
       amount: "₹14,000",
       status: "confirmed",
@@ -47,7 +47,7 @@ const GuideDashboard = () => {
       customerName: "Raj Patel",
       customerAvatar: "RP",
       tour: "Hundru Falls Adventure",
-      date: "2024-03-18",
+      date: "2025-03-18",
       guests: 2,
       amount: "₹5,000",
       status: "pending",
@@ -58,7 +58,7 @@ const GuideDashboard = () => {
       customerName: "Lisa Chen",
       customerAvatar: "LC",
       tour: "Cultural Heritage Tour", 
-      date: "2024-03-22",
+      date: "2025-03-22",
       guests: 6,
       amount: "₹25,200",
       status: "confirmed",
@@ -70,7 +70,7 @@ const GuideDashboard = () => {
     {
       id: 1,
       title: "Betla National Park Safari",
-      date: "2024-03-15",
+      date: "2025-03-15",
       time: "6:00 AM",
       guests: 4,
       customerName: "Sarah Johnson",
@@ -79,7 +79,7 @@ const GuideDashboard = () => {
     {
       id: 2,
       title: "Hundru Falls Adventure",
-      date: "2024-03-18", 
+      date: "2025-03-18", 
       time: "8:00 AM",
       guests: 2,
       customerName: "Raj Patel",
@@ -122,7 +122,7 @@ const GuideDashboard = () => {
       { date: "Week 4", amount: 2250 }
     ],
     pendingPayouts: "₹8,450",
-    nextPayout: "2024-03-20"
+    nextPayout: "2025-03-20"
   };
 
   const getStatusColor = (status: string) => {
