@@ -23,6 +23,30 @@ const UserDashboard = () => {
     fetchUserData();
   }, []);
 
+  // Listen for wishlist changes from localStorage
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const localWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+      setWishlist(localWishlist);
+    };
+
+    const handleWishlistUpdate = () => {
+      refreshWishlist();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('wishlistUpdated', handleWishlistUpdate);
+    
+    // Also check on focus (when user comes back to tab)
+    window.addEventListener('focus', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('wishlistUpdated', handleWishlistUpdate);
+      window.removeEventListener('focus', handleStorageChange);
+    };
+  }, []);
+
   const fetchUserData = async () => {
     try {
       setLoading(true);
@@ -72,18 +96,27 @@ const UserDashboard = () => {
 
   const fetchWishlist = async (userId) => {
     try {
+      // First try to fetch from backend API
       const response = await fetch(`${API_BASE_URL}/user/${userId}/wishlist`);
       if (response.ok) {
         const data = await response.json();
         setWishlist(data.wishlist || []);
       } else {
-        // If no wishlist endpoint exists, use empty array
-        setWishlist([]);
+        // Fallback to localStorage if API doesn't exist
+        const localWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+        setWishlist(localWishlist);
       }
     } catch (error) {
       console.error('Failed to fetch wishlist:', error);
-      setWishlist([]);
+      // Fallback to localStorage
+      const localWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+      setWishlist(localWishlist);
     }
+  };
+
+  const refreshWishlist = () => {
+    const localWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+    setWishlist(localWishlist);
   };
 
   // Calculate dynamic stats from user data
@@ -98,7 +131,7 @@ const UserDashboard = () => {
   // Generate travel history from bookings
   const travelHistory = bookings
     .filter(b => b.status === 'completed')
-    .reduce((acc, booking) => {
+    .reduce((acc: Record<string, any[]>, booking) => {
       const year = new Date(booking.date).getFullYear().toString();
       if (!acc[year]) {
         acc[year] = [];
@@ -114,7 +147,7 @@ const UserDashboard = () => {
   // Convert to array format
   const travelHistoryArray = Object.entries(travelHistory).map(([year, trips]) => ({
     year,
-    trips
+    trips: trips as any[]
   }));
 
   const getStatusColor = (status: string) => {
@@ -384,14 +417,14 @@ const UserDashboard = () => {
                   </CardContent>
                 </Card>
               ) : (
-                travelHistoryArray.map((yearData) => (
+                travelHistoryArray.map((yearData: { year: string; trips: any[] }) => (
                 <Card key={yearData.year}>
                   <CardHeader>
                     <CardTitle>{yearData.year}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {yearData.trips.map((trip, index) => (
+                      {yearData.trips.map((trip: any, index: number) => (
                         <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
                           <div>
                             <h4 className="font-medium">{trip.title}</h4>

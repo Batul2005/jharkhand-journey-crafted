@@ -1,8 +1,10 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import AttractionDetail from '@/components/AttractionDetail';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, Star, Filter } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
 
 const Explore = () => {
   const attractions = [
@@ -14,7 +16,14 @@ const Explore = () => {
       category: "Waterfall",
       region: "Ranchi",
       rating: 4.5,
-      distance: "45 km from Ranchi"
+      distance: "45 km from Ranchi",
+      detailedDescription: "Hundru Falls is one of the most spectacular waterfalls in Jharkhand, cascading from a height of 98 meters. The waterfall is formed by the Subarnarekha River and offers breathtaking views, especially during the monsoon season. The surrounding lush green forests and the cool mist create a magical atmosphere that attracts thousands of visitors every year.",
+      bestTimeToVisit: "July to October",
+      entryFee: "₹30 per person",
+      timings: "6:00 AM - 6:00 PM",
+      facilities: ["Parking", "Restrooms", "Food Stalls", "Photography", "Safety Railings"],
+      nearbyAttractions: ["Jonha Falls", "Dassam Falls", "Hirni Falls"],
+      contactInfo: "+91 9876543210"
     },
     {
       id: 2,
@@ -24,9 +33,53 @@ const Explore = () => {
       category: "Wildlife",
       region: "Palamu",
       rating: 4.3,
-      distance: "150 km from Ranchi"
+      distance: "150 km from Ranchi",
+      detailedDescription: "Betla National Park is one of India's first tiger reserves and a haven for wildlife enthusiasts. Spread over 1,026 square kilometers, it's home to Royal Bengal Tigers, Asian Elephants, Leopards, and over 200 species of birds. The park offers jeep safaris, elephant rides, and nature walks to explore its diverse ecosystem.",
+      bestTimeToVisit: "October to April",
+      entryFee: "₹100 per person (Indian), ₹500 (Foreign)",
+      timings: "6:00 AM - 5:00 PM",
+      facilities: ["Safari Booking", "Rest House", "Restaurant", "Parking", "Guide Services"],
+      nearbyAttractions: ["Palamau Fort", "Kechki Sangam", "Lodh Falls"],
+      contactInfo: "+91 9876543211"
     }
   ];
+
+  const handleAddToWishlist = (attraction: any) => {
+    // Get existing wishlist from localStorage
+    const existingWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+    
+    // Check if already in wishlist
+    const isAlreadyInWishlist = existingWishlist.some((item: any) => item.id === attraction.id);
+    
+    if (isAlreadyInWishlist) {
+      // Remove from wishlist
+      const updatedWishlist = existingWishlist.filter((item: any) => item.id !== attraction.id);
+      localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+      toast({
+        title: "Removed from wishlist",
+        description: `${attraction.name} has been removed from your wishlist.`,
+      });
+    } else {
+      // Add to wishlist
+      const wishlistItem = {
+        id: attraction.id,
+        title: attraction.name,
+        image: attraction.image,
+        location: attraction.distance,
+        rating: attraction.rating,
+        price: attraction.entryFee || 'Free'
+      };
+      const updatedWishlist = [...existingWishlist, wishlistItem];
+      localStorage.setItem('wishlist', JSON.stringify(updatedWishlist));
+      toast({
+        title: "Added to wishlist",
+        description: `${attraction.name} has been added to your wishlist.`,
+      });
+    }
+    
+    // Trigger a custom event to notify other components
+    window.dispatchEvent(new CustomEvent('wishlistUpdated'));
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -87,7 +140,10 @@ const Explore = () => {
                       {attraction.distance}
                     </div>
                   </div>
-                  <Button className="w-full">View Details</Button>
+                  <AttractionDetail 
+                    attraction={attraction} 
+                    onAddToWishlist={handleAddToWishlist}
+                  />
                 </CardContent>
               </Card>
             ))}
