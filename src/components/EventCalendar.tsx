@@ -23,7 +23,7 @@ const events: Event[] = [
   {
     id: '1',
     title: 'Sarhul Festival Celebration',
-    date: new Date(2024, 2, 15),
+    date: new Date(2025, 2, 15),
     time: '6:00 AM - 6:00 PM',
     location: 'Khunti District',
     type: 'festival',
@@ -37,7 +37,7 @@ const events: Event[] = [
   {
     id: '2', 
     title: 'Handicraft Workshop',
-    date: new Date(2024, 2, 22),
+    date: new Date(2025, 2, 22),
     time: '10:00 AM - 4:00 PM',
     location: 'Dumka Cultural Center',
     type: 'workshop',
@@ -51,7 +51,7 @@ const events: Event[] = [
   {
     id: '3',
     title: 'Jagannath Rath Yatra',
-    date: new Date(2024, 6, 7),
+    date: new Date(2025, 6, 7),
     time: '5:00 AM - 8:00 PM',
     location: 'Deoghar Temple',
     type: 'religious',
@@ -65,7 +65,7 @@ const events: Event[] = [
   {
     id: '4',
     title: 'Adventure Trekking Expedition',
-    date: new Date(2024, 3, 10),
+    date: new Date(2025, 3, 10),
     time: '6:00 AM - 6:00 PM',
     location: 'Netarhat Hills',
     type: 'adventure',

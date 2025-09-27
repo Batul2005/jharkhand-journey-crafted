@@ -353,7 +353,7 @@ const Booking = () => {
       <Card className="max-w-md mx-auto">
         <CardHeader className="text-center">
           <CardTitle>Booking Details</CardTitle>
-          <CardDescription>Booking ID: #JT2024001</CardDescription>
+          <CardDescription>Booking ID: #JT2025001</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="flex justify-between">

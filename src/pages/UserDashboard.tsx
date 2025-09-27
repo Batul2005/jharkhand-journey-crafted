@@ -23,7 +23,7 @@ const UserDashboard = () => {
       id: "BK001",
       title: "Hundru Falls Adventure",
       destination: "Ranchi, Jharkhand",
-      date: "2024-03-15",
+      date: "2025-03-15",
       status: "confirmed",
       price: "₹2,500",
       image: "/src/assets/hundru-falls.jpg",
@@ -33,7 +33,7 @@ const UserDashboard = () => {
       id: "BK002", 
       title: "Betla National Park Safari",
       destination: "Latehar, Jharkhand",
-      date: "2024-03-20",
+      date: "2025-03-20",
       status: "pending",
       price: "₹3,800",
       image: "/src/assets/betla-park.jpg",
@@ -43,7 +43,7 @@ const UserDashboard = () => {
       id: "BK003",
       title: "Cultural Heritage Tour",
       destination: "Deoghar, Jharkhand", 
-      date: "2024-02-10",
+      date: "2025-02-10",
       status: "completed",
       price: "₹1,800",
       image: "/src/assets/handicrafts.jpg",
@@ -72,10 +72,10 @@ const UserDashboard = () => {
 
   const travelHistory = [
     {
-      year: "2024",
+      year: "2025",
       trips: [
-        { title: "Hundru Falls Adventure", date: "Mar 2024", rating: 5 },
-        { title: "Cultural Heritage Tour", date: "Feb 2024", rating: 4 }
+        { title: "Hundru Falls Adventure", date: "Mar 2025", rating: 5 },
+        { title: "Cultural Heritage Tour", date: "Feb 2025", rating: 4 }
       ]
     },
     {

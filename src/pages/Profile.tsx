@@ -25,7 +25,7 @@ const Profile = () => {
     bio: 'Adventure enthusiast and nature lover. Love exploring the hidden gems of Jharkhand.',
     location: 'Ranchi, Jharkhand',
     languages: ['Hindi', 'English', 'Bengali'],
-    joinDate: 'March 2024',
+    joinDate: 'March 2025',
     avatar: ''
   });
 
@@ -35,7 +35,7 @@ const Profile = () => {
       type: 'Waterfall Trek',
       destination: 'Hundru Falls',
       guide: 'Ravi Kumar',
-      date: '15 Nov 2024',
+      date: '15 Nov 2025',
       status: 'Confirmed',
       amount: '₹2,500'
     },
@@ -44,7 +44,7 @@ const Profile = () => {
       type: 'Wildlife Safari',
       destination: 'Betla National Park',
       guide: 'Meera Devi',
-      date: '28 Oct 2024',
+      date: '28 Oct 2025',
       status: 'Completed',
       amount: '₹3,200'
     }

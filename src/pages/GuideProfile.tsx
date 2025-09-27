@@ -93,9 +93,9 @@ const GuideProfile = () => {
     thisMonth: 18,
     nextMonth: 25,
     upcomingBookings: [
-      { date: "2024-03-15", tour: "Betla Safari", clients: 4 },
-      { date: "2024-03-18", tour: "Hundru Falls", clients: 2 },
-      { date: "2024-03-22", tour: "Cultural Tour", clients: 6 }
+      { date: "2025-03-15", tour: "Betla Safari", clients: 4 },
+      { date: "2025-03-18", tour: "Hundru Falls", clients: 2 },
+      { date: "2025-03-22", tour: "Cultural Tour", clients: 6 }
     ]
   };
 

@@ -23,7 +23,7 @@ const TourManagement = () => {
       rating: 4.8,
       image: "/src/assets/betla-park.jpg",
       description: "Experience wildlife at its best in Jharkhand's premier national park.",
-      nextBooking: "2024-03-15"
+      nextBooking: "2025-03-15"
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ const TourManagement = () => {
       rating: 4.9,
       image: "/src/assets/hundru-falls.jpg",
       description: "Thrilling waterfall trekking and adventure sports experience.",
-      nextBooking: "2024-03-18"
+      nextBooking: "2025-03-18"
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ const TourManagement = () => {
       id: "BK001",
       tourTitle: "Betla National Park Safari",
       customerName: "Sarah Johnson",
-      date: "2024-03-15",
+      date: "2025-03-15",
       guests: 4,
       amount: "₹14,000",
       status: "confirmed",
@@ -68,7 +68,7 @@ const TourManagement = () => {
       id: "BK002",
       tourTitle: "Hundru Falls Adventure", 
       customerName: "Raj Patel",
-      date: "2024-03-18",
+      date: "2025-03-18",
       guests: 2,
       amount: "₹5,000",
       status: "pending",
@@ -78,7 +78,7 @@ const TourManagement = () => {
       id: "BK003",
       tourTitle: "Cultural Heritage Tour",
       customerName: "Lisa Chen",
-      date: "2024-03-22",
+      date: "2025-03-22",
       guests: 6,
       amount: "₹25,200",
       status: "confirmed",
@@ -87,12 +87,12 @@ const TourManagement = () => {
   ];
 
   const availabilityCalendar = [
-    { date: "2024-03-15", status: "booked", tour: "Betla Safari" },
-    { date: "2024-03-16", status: "available" },
-    { date: "2024-03-17", status: "available" },
-    { date: "2024-03-18", status: "booked", tour: "Hundru Falls" },
-    { date: "2024-03-19", status: "blocked" },
-    { date: "2024-03-20", status: "available" }
+    { date: "2025-03-15", status: "booked", tour: "Betla Safari" },
+    { date: "2025-03-16", status: "available" },
+    { date: "2025-03-17", status: "available" },
+    { date: "2025-03-18", status: "booked", tour: "Hundru Falls" },
+    { date: "2025-03-19", status: "blocked" },
+    { date: "2025-03-20", status: "available" }
   ];
 
   const getStatusColor = (status: string) => {
@@ -335,7 +335,7 @@ const TourManagement = () => {
             
             <Card>
               <CardHeader>
-                <CardTitle>March 2024</CardTitle>
+                <CardTitle>March 2025</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-7 gap-2 mb-4">

@@ -133,7 +133,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-white/60 font-inter text-sm">
-              © 2024 JharkhandAI Tourism Platform. All rights reserved. 
+              © 2025 JharkhandAI Tourism Platform. All rights reserved. 
               <span className="text-white/40"> | Powered by Government of Jharkhand</span>
             </div>
 
