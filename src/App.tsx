@@ -24,6 +24,7 @@ import Profile from "./pages/Profile";
 import Booking from "./pages/Booking";
 import Community from "./pages/Community";
 import AdminDashboard from "./pages/AdminDashboard";
+import VendorDashboard from "./pages/VendorDashboard";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,10 @@ const App = () => (
             
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            
+            {/* Vendor Routes */}
+            <Route path="/vendor-dashboard" element={<VendorDashboard />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
