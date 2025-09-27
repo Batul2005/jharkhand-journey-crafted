@@ -6,22 +6,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { User, MapPin, Shield } from 'lucide-react';
+import { User, MapPin, Shield, Calendar } from 'lucide-react';
 
 const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const [userType, setUserType] = useState<'tourist' | 'guide' | 'admin'>('tourist');
+  const [userType, setUserType] = useState<'tourist' | 'guide' | 'admin' | 'vendor'>('tourist');
 
   const roleIcons = {
     tourist: User,
     guide: MapPin,
-    admin: Shield
+    admin: Shield,
+    vendor: Calendar
   };
 
   const roleColors = {
     tourist: 'bg-blue-500',
     guide: 'bg-green-500',
-    admin: 'bg-red-500'
+    admin: 'bg-red-500',
+    vendor: 'bg-purple-500'
   };
 
   return (
@@ -78,6 +80,12 @@ const Auth = () => {
                       <div className="flex items-center space-x-2">
                         <Shield className="h-4 w-4" />
                         <span>Administrator</span>
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="vendor">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="h-4 w-4" />
+                        <span>Event Vendor</span>
                       </div>
                     </SelectItem>
                   </SelectContent>
